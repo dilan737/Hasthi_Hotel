@@ -1,0 +1,12 @@
+export function getAllStudents(req,res){
+    res.json({
+
+        message:"All student"
+    })
+
+}
+export function saveStudent(req,res){
+    res.json({
+        message:"Student updated"
+    })
+}
