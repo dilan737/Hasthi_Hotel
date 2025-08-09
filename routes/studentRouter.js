@@ -1,40 +1,11 @@
 import express from 'express';
+import { getAllStudents, saveStudent, updateStudent, deleteStudent } from './controllers/studentController.js';
 
-const studentRouter=express.Router();
+const studentRouter = express.Router();
 
-studentRouter.get("/",(req,res)=>{
-    res.json({
-
-        message:"All student"
-    })
-
-    }
-)
-studentRouter.post("/",(req,res)=>{
-    res.json({
-
-        message:"Student Saved"
-    })
-
-    }
-)
-
-studentRouter.put("/",(req,res)=>{
-    res.json({
-
-        message:"Student Saved"
-    })
-
-    }
-)
-
-studentRouter.delete("/",(req,res)=>{
-    res.json({
-
-        message:"Student Saved"
-    })
-
-    }
-)
+studentRouter.get("/", getAllStudents);
+studentRouter.post("/", saveStudent);
+studentRouter.put("/", updateStudent);
+studentRouter.delete("/", deleteStudent);
 
 export default studentRouter;
