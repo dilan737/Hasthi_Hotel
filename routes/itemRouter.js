@@ -1,6 +1,6 @@
 import expresss from "express"
-import { getAllStudents } from "./controllers/studentController";
-import { getAllitem, saveItem } from "./controllers/itemController";
+import { getAllStudents } from "./controllers/studentController.js";
+import { getAllitem, saveItem } from "./controllers/itemController.js";
 
 const iteamRouter=expresss.Router();
 

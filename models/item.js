@@ -8,4 +8,4 @@ const itemSchema=new mongoose.Schema({
 })
 
 const Item =mongoose.model("items",itemSchema)
-export default Item;z
+export default Item;
