@@ -3,9 +3,7 @@ import bodyParser from "body-parser"
 import mongoose from "mongoose";
 import studentRouter from "./routes/studentRouter.js";
 import iteamRouter from "./routes/itemRouter.js";
-//import student from "./models/Student.js";
 
-//mongodb+srv://admin:<db_password>@cluster0.sfdum3k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 
 const app=express();
 
@@ -27,8 +25,8 @@ mongoose.connect("mongodb+srv://admin:123@cluster0.sfdum3k.mongodb.net/?retryWri
 
 app.use(bodyParser.json());
 
-app.use("/student", studentRouter);
-app.use("/item",iteamRouter);
+app.use("/api/student", studentRouter);
+app.use("/api/item",iteamRouter);
 
 
 app.listen(5000,

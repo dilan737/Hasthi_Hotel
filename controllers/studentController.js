@@ -1,4 +1,5 @@
-import Student from "../../models/Student.js"
+
+import Student from "../models/student.js"
 
 export function getAllStudents(req,res){
 
@@ -43,6 +44,12 @@ export function updateStudent(req,res){
 export function deleteStudent(req,res){
     res.json({
         message:"Student deleted"
+    })
+}
+
+export function good(req,res){
+    res.json({
+        message:"Goos Items"
     })
 }
 
