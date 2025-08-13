@@ -3,12 +3,13 @@ import bodyParser from "body-parser"
 import mongoose from "mongoose";
 import studentRouter from "./routes/studentRouter.js";
 import iteamRouter from "./routes/itemRouter.js";
+import userRouter from "./routes/userRouter.js";
 
 
 const app=express();
 
 
-mongoose.connect("mongodb+srv://admin:123@cluster0.sfdum3k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(
+mongoose.connect("mongodb+srv://admin:1234@cluster0.sfdum3k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(
     ()=>{
 
         console.log("Connected To the database");
@@ -27,11 +28,13 @@ app.use(bodyParser.json());
 
 app.use("/api/student", studentRouter);
 app.use("/api/item",iteamRouter);
+app.use("/api/user",userRouter);
+
 
 
 app.listen(5000,
     ()=>{
         
-        console.log("server is Running on port 5000");
+        console.log("serve sssis Running on port 5000");
     }
 )

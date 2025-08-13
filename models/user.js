@@ -18,23 +18,37 @@ const userSchema =new mongoose.Schema({
     role:{
 
         type:String,
-        required:true,
+        required:true, 
+        default:"user"
      
     },
     password:{
         type:String,
         required:true,
-        default:"user"
+        
     },
-    resetPasswordToken:String,
-    resetPasswordExpire:Date,
-    createdAt:{
-        type:Date,
-        default:Date.now
-         
-
-
-
-
-    }
+    phone:{
+        type:String,
+        required:true,
+        default:"not given"
+    },
+    // address:{
+    //     type:String,
+    //     required:true,
+    //     default:"not given"
+    // },
+    isDisabled:{
+        type:Boolean,
+        required:true,
+        default:false
+    },
+    isEmailVerified:{
+        type:Boolean,
+        required:true,
+        default:false
+    },
 })
+
+ 
+         const User = mongoose.model("user",userSchema)
+         export default User;
