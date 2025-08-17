@@ -1,10 +1,10 @@
 import express from "express"; 
 import bodyParser from "body-parser"
 import mongoose from "mongoose";
-import studentRouter from "./routes/studentRouter.js";
-import iteamRouter from "./routes/itemRouter.js";
 import userRouter from "./routes/userRouter.js";
-
+import productRouter from "./routes/productRouter.js";
+import verifyJwt from "./middleware/auth.js";
+import orderrouter from "./routes/orderRoutes.js";
 
 const app=express();
 
@@ -25,16 +25,19 @@ mongoose.connect("mongodb+srv://admin:1234@cluster0.sfdum3k.mongodb.net/?retryWr
 // });
 
 app.use(bodyParser.json());
+app.use(verifyJwt);
 
-app.use("/api/student", studentRouter);
-app.use("/api/item",iteamRouter);
+
+
 app.use("/api/user",userRouter);
+app.use("/api/product",productRouter);
+app.use("/api/order",orderrouter);
 
 
 
 app.listen(5000,
     ()=>{
         
-        console.log("serve sssis Running on port 5000");
+        console.log("server is Running on port 5000");
     }
 )
